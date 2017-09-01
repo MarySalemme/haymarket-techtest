@@ -1,0 +1,29 @@
+@import 'vendor/bootstrap/_variables_custom.scss';
+
+html{
+  font-size: $font-size-mobile;
+  @media #{$mq-sm}{
+    font-size: $font-size-base;
+  }
+}
+
+//This rule is not part of icons/styles.css because that file can be completly replaced
+//and we need to keep this rule as a default
+[data-icon]:before {
+  vertical-align: middle;
+}
+
+img{
+  width: 100%;
+}
+
+.breakWords{
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+a {
+  &:hover {
+    cursor: pointer;
+  }
+}

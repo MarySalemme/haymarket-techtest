@@ -1,0 +1,12 @@
+@import '../vendor/bootstrap/variables_custom';
+@import '../vendor/bootstrap/mixins_custom/_mixins_custom.scss';
+
+.rating {
+  display: flex;
+}
+
+.active {
+  svg {
+    fill: $brand-primary;
+  }
+}

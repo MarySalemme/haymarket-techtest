@@ -1,0 +1,21 @@
+{
+  "source": "./src",
+  "destination": "./docs",
+  "excludes": [
+    "themes",
+    "server/server.js"
+  ],
+  "access": ["public", "protected", "private"],
+  "unexportIdentifier": true,
+  "manual": {
+    "usage": [
+      "./src/components/hoc/README.hoc.md",
+      "./src/components/presentational/README.presentational.md"
+    ]
+  },
+  "test": {
+    "type": "mocha",
+    "source": "./src",
+    "includes": ["\\.test\\.js$"]
+  }
+}
