@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 import App from 'rootContainers/App';
 import Home from 'rootContainers/Home';
+import Teasers from 'rootContainers/Teasers';
 import About from 'rootContainers/About';
 import NotFound from 'rootContainers/NotFound';
 import StyleGuide from 'rootContainers/StyleGuide';
@@ -9,7 +10,7 @@ import StyleGuide from 'rootContainers/StyleGuide';
 export default (
   <Route path = "/" component = { App }>
     <IndexRoute component = { Home } />
-    <Route path = "/advice" component = { NotFound } />
+    <Route path = "/advice" component = { Teasers } />
     <Route path = "/advice/:id" component = { NotFound } />
     <Route path = "/news" component = { NotFound } />
     <Route path = "/news/:id" component = { NotFound } />
