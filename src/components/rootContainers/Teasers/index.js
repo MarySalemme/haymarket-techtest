@@ -15,7 +15,7 @@ class Teasers extends Component {
     return (
       <div>
         {teasers.items.map(info =>
-          <Teaser key = { info.nid } carType = { info.carType } teaserTitle = { info.teaserTitle } />
+          <Teaser key = { info.nid } carType = { info.carType } teaserTitle = { info.teaserTitle } rating = { info.rating } teaserCopy = { info.teaserCopy } />
         )}
       </div>
     );

@@ -15,7 +15,12 @@ class Teaser extends PureComponent {
   static propTypes = {
     carType: PropTypes.string,
     teaserTitle: PropTypes.string,
+    rating: PropTypes.number,
     teaserCopy: PropTypes.string,
+    image: PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      'src@2x': PropTypes.string
+    })
   };
 
   /**
@@ -24,12 +29,32 @@ class Teaser extends PureComponent {
    * @return {JSX} - rendered Teaser component.
    */
   render() : React.Element<*> {
+    const {
+      carType,
+      teaserTitle,
+      rating,
+      teaserCopy,
+      ...props
+    } = this.props;
+
+    const carTypeComponent = carType ?
+      <h2>{ carType }</h2> : null;
+
+    const teaserTitleComponent = teaserTitle ?
+      <h3>{ teaserTitle }</h3> : null;
+
+    const ratingComponent = rating ?
+      <div>{ teaserTitle }</div> : null;
+
+    const teaserCopyComponent = teaserCopy ?
+      <p>{ teaserCopy.replace(/<\/?p>/g, '')}</p> : null;
+
     return (
-      <div>
-        <div>image goes here</div>
-        <h2>{this.props.carType}</h2>
-        <h3>{this.props.teaserTitle}</h3>
-        <p>{this.props.teaserCopy}</p>
+      <div { ...props }>
+        { carTypeComponent }
+        { teaserTitleComponent }
+        { ratingComponent }
+        { teaserCopyComponent }
       </div>
     );
   }
