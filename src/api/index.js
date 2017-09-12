@@ -33,3 +33,12 @@ export const fetchProps = (props) => {
     return data.json();
   });
 };
+
+// export const fetchTeasers = (props) => {
+//   const query = props.join('&');
+//   return fetch('/api/config/teasers' + query, {
+//     accept: 'application/json',
+//   }).then((data) => {
+//     return data.json();
+//   });
+// };
