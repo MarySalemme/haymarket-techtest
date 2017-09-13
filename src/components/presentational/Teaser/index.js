@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import RetinaImage from 'react-retina-image';
 
 /**
 * <Teaser /> component.
@@ -18,7 +19,8 @@ class Teaser extends PureComponent {
     rating: PropTypes.number,
     teaserCopy: PropTypes.string,
     image: PropTypes.shape({
-      src: PropTypes.string.isRequired
+      src: PropTypes.string.isRequired,
+      'src@2x': PropTypes.string
     })
   };
 
@@ -38,7 +40,7 @@ class Teaser extends PureComponent {
     } = this.props;
 
     const imageComponent = image.src ?
-      <img src = { image.src } /> : null;
+      <RetinaImage src = { [image.src, image['src@2x']] } /> : null;
 
     const carTypeComponent = carType ?
       <h2>{ carType }</h2> : null;
