@@ -18,8 +18,7 @@ class Teaser extends PureComponent {
     rating: PropTypes.number,
     teaserCopy: PropTypes.string,
     image: PropTypes.shape({
-      src: PropTypes.string.isRequired,
-      'src@2x': PropTypes.string
+      src: PropTypes.string.isRequired
     })
   };
 
@@ -39,7 +38,7 @@ class Teaser extends PureComponent {
     } = this.props;
 
     const imageComponent = image.src ?
-      <img src = { [image.src, image['src@2x']] } /> : null;
+      <img src = { image.src } /> : null;
 
     const carTypeComponent = carType ?
       <h2>{ carType }</h2> : null;
