@@ -30,12 +30,16 @@ class Teaser extends PureComponent {
    */
   render() : React.Element<*> {
     const {
+      image: image = {},
       carType,
       teaserTitle,
       rating,
       teaserCopy,
       ...props
     } = this.props;
+
+    const imageComponent = image.src ?
+      <img src = { [image.src, image['src@2x']] } /> : null;
 
     const carTypeComponent = carType ?
       <h2>{ carType }</h2> : null;
@@ -44,13 +48,14 @@ class Teaser extends PureComponent {
       <h3>{ teaserTitle }</h3> : null;
 
     const ratingComponent = rating ?
-      <div>{ teaserTitle }</div> : null;
+      <div>{ rating }</div> : null;
 
     const teaserCopyComponent = teaserCopy ?
       <p>{ teaserCopy.replace(/<\/?p>/g, '')}</p> : null;
 
     return (
       <div { ...props }>
+        { imageComponent }
         { carTypeComponent }
         { teaserTitleComponent }
         { ratingComponent }
