@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import Teaser from 'presentational/Teaser';
-
+import { Grid, Col, Row } from 'presentational/Grid';
 /**
  * <Teasers /> component.
  */
@@ -14,9 +14,15 @@ class Teasers extends Component {
   render() : React.Element<*> {
     return (
       <div>
-        {teasers.items.map(info =>
-          <Teaser key = { info.nid } carType = { info.carType } teaserTitle = { info.teaserTitle } rating = { info.rating } teaserCopy = { info.teaserCopy } />
-        )}
+        <Grid>
+          <Row>
+            <Col colXs = { 12 } colSm = { 3 } >
+              {teasers.items.map(info =>
+                <Teaser key = { info.nid } carType = { info.carType } teaserTitle = { info.teaserTitle } rating = { info.rating } teaserCopy = { info.teaserCopy } image = { info.image } />
+              )}
+            </Col>
+          </Row>
+        </Grid>
       </div>
     );
   }
