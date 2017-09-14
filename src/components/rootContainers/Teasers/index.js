@@ -4,7 +4,7 @@ import Teaser from 'presentational/Teaser';
 import { Grid, Col, Row } from 'presentational/Grid';
 
 import classNames from 'classnames';
-
+import style from 'components/Teasers.scss';
 import navFlex from 'shared/flex.scss';
 /**
  * <Teasers /> component.
@@ -17,12 +17,12 @@ class Teasers extends Component {
    */
   render() : React.Element<*> {
     return (
-      <div>
+      <div className = { style.teasers } >
         <Grid>
           <nav className = { classNames([navFlex.navFlex]) } >
             <Row>
               {teasers.items.map(info =>
-                <Col key = { info.nid } colXs = { 12 } colSm = { 3 } >
+                <Col key = { info.nid } colXs = { 7 } colSm = { 5 } colMd = { 3 } colLg = { 3 } >
                   <Teaser key = { info.nid } carType = { info.carType } teaserTitle = { info.teaserTitle } rating = { info.rating } teaserCopy = { info.teaserCopy } image = { info.image } />
                 </Col>
               )}
