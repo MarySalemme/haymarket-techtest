@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import RetinaImage from 'react-retina-image';
+import Rating from 'presentational/Rating';
 
 /**
 * <Teaser /> component.
@@ -49,7 +50,7 @@ class Teaser extends PureComponent {
       <h3>{ teaserTitle }</h3> : null;
 
     const ratingComponent = rating ?
-      <div>{ rating }</div> : null;
+      <Rating ratedValue = { rating } /> : null;
 
     const teaserCopyComponent = teaserCopy ?
       <p>{ teaserCopy.replace(/<\/?p>/g, '')}</p> : null;
