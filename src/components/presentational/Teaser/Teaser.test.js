@@ -2,10 +2,16 @@ import React from 'react';
 import Teaser from './index';
 
 describe('<Teaser />', () => {
-
+  /**
+   * Prepare Copyright component for testing.
+   *
+   * @param  {Object} [props={}] properties for component.
+   * @param  {String} [method='shallow'] render method to use.
+   * @return {Object} rendered JSX object.
+   */
   const prepareTeaser = (props = {}, method = 'shallow') => {
     return global[method](<Teaser { ...props } />);
-  }
+  };
 
   it('renders a <div>', () => {
     const wrapper = prepareTeaser();

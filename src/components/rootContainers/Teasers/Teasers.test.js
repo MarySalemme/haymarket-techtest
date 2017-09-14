@@ -1,8 +1,6 @@
 import React from 'react';
 import Teasers from './index';
-import Teaser from 'presentational/Teaser';
 
-import { render } from 'enzyme';
 import { expect }  from 'chai';
 
 describe('<Teasers/>', () => {
