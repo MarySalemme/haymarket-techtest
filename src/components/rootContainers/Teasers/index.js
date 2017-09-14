@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 import Teaser from 'presentational/Teaser';
 import { Grid, Col, Row } from 'presentational/Grid';
+
+import classNames from 'classnames';
+
+import navFlex from 'shared/flex.scss';
 /**
  * <Teasers /> component.
  */
@@ -15,13 +19,15 @@ class Teasers extends Component {
     return (
       <div>
         <Grid>
-          <Row>
-            <Col colXs = { 12 } colSm = { 3 } >
+          <nav className = { classNames([navFlex.navFlex]) } >
+            <Row>
               {teasers.items.map(info =>
-                <Teaser key = { info.nid } carType = { info.carType } teaserTitle = { info.teaserTitle } rating = { info.rating } teaserCopy = { info.teaserCopy } image = { info.image } />
+                <Col key = { info.nid } colXs = { 12 } colSm = { 3 } >
+                  <Teaser key = { info.nid } carType = { info.carType } teaserTitle = { info.teaserTitle } rating = { info.rating } teaserCopy = { info.teaserCopy } image = { info.image } />
+                </Col>
               )}
-            </Col>
-          </Row>
+            </Row>
+          </nav>
         </Grid>
       </div>
     );
