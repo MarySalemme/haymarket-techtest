@@ -26,7 +26,7 @@ class Teasers extends Component {
               {teasers.items.map(info =>
                 <Col key = { info.nid } colXs = { 7 } colSm = { 5 } colMd = { 3 } colLg = { 3 } >
                   <Teaser key = { info.nid } carType = { info.carType } teaserTitle = { info.teaserTitle } rating = { info.rating } teaserCopy = { info.teaserCopy } image = { info.image } />
-                  <Button buttonClass = { classNames([bootstrap.btn, bootstrap.btnPrimary]) } buttonText = 'Vote this review' />
+                  <Button buttonClass = { classNames([bootstrap.btn, bootstrap.btnPrimary]) } buttonText = 'Vote this review' data-elemId = { info.nid } />
                 </Col>
               )}
             </Row>
